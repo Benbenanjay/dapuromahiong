@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering Kantoran - Dapur OMA HIONG</title>
+  <meta name="description"
+    content="Catering kantoran Dapur OMA HIONG menyediakan menu makan siang sehat, bergizi, dan praktis untuk karyawan. Solusi tepat untuk makan enak tanpa ribet setiap hari di tempat kerja.">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      background-color: #ff6f00;
+      text-align: center;
+      padding: 15px 0 25px;
+      font-size: 1.5em;
+      font-weight: bold;
+      position: relative;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 10px;
+      width: 70px;
+      height: auto;
+    }
+
+    /* Tombol kembali */
+    .back-btn {
+      display: inline-block;
+      margin: 15px 20px;
+      background-color: #ff6f00;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .back-btn:hover {
+      background-color: #ffa031;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .back-btn {
+        display: block;
+        margin: 15px auto;
+        text-align: center;
+        width: 80%;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background-image: url('../Tugas_1/kontenKantoranBg/CateringKantoran.jpg');
+      /* dikosongin dulu, nanti lu isi */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .hero h1,
+    .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.3em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      color: #ddd;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Deskripsi bawah */
+    .intro {
+      max-width: 990px;
+      margin: 50px auto 30px;
+      padding: 0 20px;
+      text-align: center;
+      color: #ccc;
+      line-height: 1.7em;
+      font-size: 1.05em;
+    }
+
+    /* Judul & Deskripsi Paket */
+    h2 {
+      text-align: center;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    p.desc {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    /* Paket Section */
+    .paket-section {
+      position: relative;
+      background-image: url("../Tugas_1/kontenKantoranBg/CewePegangAlatDapur.png");
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-size: 380px auto;
+      padding-bottom: 100px;
+      filter: brightness(1.15);
+    }
+
+    .paket-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(17, 17, 17, 0.95) 40%, rgba(17, 17, 17, 0));
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 900px) {
+      .paket-section {
+        background-size: 200px auto;
+        background-position: center bottom;
+        padding-bottom: 150px;
+      }
+    }
+
+    /* Kartu Paket */
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 270px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .header {
+      text-align: center;
+      color: #000;
+      font-weight: bold;
+      padding: 15px;
+    }
+
+    .paket1 {
+      background-color: #8fd694;
+    }
+
+    .paket2 {
+      background-color: #55c2da;
+    }
+
+    .paket3 {
+      background-color: #f9b24e;
+    }
+
+    .harga {
+      text-align: center;
+      font-size: 1.9em;
+      margin-top: 20px;
+    }
+
+    .harga span {
+      font-size: 0.5em;
+      color: #ccc;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+      text-align: center;
+      color: #ddd;
+    }
+
+    ul li {
+      border-top: 1px solid #333;
+      padding: 10px 0;
+      font-size: 0.95em;
+    }
+
+    ul li:last-child {
+      border-bottom: 1px solid #333;
+    }
+
+    .btn {
+      display: block;
+      width: 80%;
+      margin: 15px auto 25px;
+      padding: 10px 0;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+      transform: scale(1.03);
+    }
+
+    .btn1 {
+      background-color: #8fd694;
+      color: #000;
+    }
+
+    .btn2 {
+      background-color: #55c2da;
+    }
+
+    .btn3 {
+      background-color: #f9b24e;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .deskripsi {
+      font-size: 0.9rem;
+      color: #cecece;
+      margin-top: 10px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ff6f00;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="kontenLogo/LogoDapurOMAHIONG.jpg" alt="Logo Dapur OMA HIONG" class="logo">
+    Dapur OMA HIONG
+  </header>
+
+  <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>PAKET CATERING KANTORAN</h1>
+    <p>Solusi makan siang praktis dan sehat untuk para karyawan yang ingin tetap bugar, fokus, dan berenergi sepanjang
+      hari.</p>
+  </section>
+
+  <!-- Deskripsi -->
+  <div class="intro">
+    <p>
+      <strong>Dapur OMA HIONG</strong> memahami pentingnya asupan bergizi di tengah rutinitas kerja yang padat.
+      Kami menghadirkan <strong>catering kantoran</strong> dengan menu seimbang yang dirancang khusus agar tetap sehat
+      tanpa kehilangan cita rasa.
+    </p>
+    <p>
+      Setiap hidangan dimasak dari bahan segar pilihan, rendah minyak, dan dikemas higienis — cocok untuk mendukung
+      produktivitas dan gaya hidup sehat di lingkungan kerja.
+    </p>
+    <p>
+      Nikmati berbagai varian menu yang bisa disesuaikan dengan preferensi perusahaan atau individu, mulai dari menu
+      sehat lite hingga paket protein plus untuk kebutuhan energi lebih.
+    </p>
+  </div>
+
+  <!-- Paket Section -->
+  <h2>Harga dan Jenis Paket Catering Kantoran</h2>
+  <p class="desc">Pilih paket makan siang sesuai kebutuhan tim Anda — praktis, higienis, dan penuh nutrisi.</p>
+
+  <div class="paket-section">
+    <div class="container">
+
+      <!-- ===================== PAKET SEHAT LITE ===================== -->
+      <div class="card">
+        <div class="header paket1">PAKET SEHAT LITE</div>
+        <div class="harga" style="color:#8fd694;">/Pcs</div>
+        <ul>
+          <li>Nasi merah / nasi putih</li>
+          <li>Ayam panggang bumbu kecap</li>
+          <li>Tumis buncis wortel</li>
+          <li>Tahu kukus / telur rebus</li>
+          <li>Buah potong segar</li>
+          <li>Air mineral 350ml</li>
+        </ul>
+        <p class="deskripsi">
+          Semua menu disiapkan dengan bahan rumahan segar — praktis, higienis, dan tetap bergizi 🍃
+        </p>
+        <a href="https://wa.me/6289602738997?text=Halo+Dapur+OMA+HIONG+👋%0ASaya+mau+pesan+*Catering+Kantoran+-+Paket+Sehat+Lite*+🍱%0A%0ADetail+paket:%0A•+Nasi+merah+atau+nasi+putih%0A•+Ayam+panggang+bumbu+kecap%0A•+Tumis+buncis+wortel%0A•+Tahu+kukus+atau+telur+rebus%0A•+Buah+potong+dan+air+mineral%0A%0ABoleh+dibantu+infonya+untuk+ketersediaan+dan+pengantaran+ya+Kak+🙏%0ATerima+kasih!%0A%0A—+Dapur+OMA+HIONG+selalu+siap+menerima+pesanan+24+jam+💛"
+          target="_blank">
+          <button class="btn btn1">PESAN</button>
+        </a>
+      </div>
+
+      <!-- ===================== PAKET BALANCE ===================== -->
+      <div class="card">
+        <div class="header paket2">PAKET BALANCE</div>
+        <div class="harga" style="color:#55c2da;">/Pcs</div>
+        <ul>
+          <li>Nasi merah / nasi putih</li>
+          <li>Ikan bakar sambal matah</li>
+          <li>Tumis bayam jagung</li>
+          <li>Tempe orek / telur dadar</li>
+          <li>Buah potong segar</li>
+          <li>Air mineral</li>
+        </ul>
+        <p class="deskripsi">
+          Semua menu disiapkan dengan bahan rumahan segar — praktis, higienis, dan tetap bergizi 🍃
+        </p>
+        <a href="https://wa.me/6289602738997?text=Halo+Dapur+OMA+HIONG+👋%0ASaya+mau+pesan+*Catering+Kantoran+-+Paket+Balance*+🍛%0A%0ADetail+paket:%0A•+Nasi+merah+atau+nasi+putih%0A•+Ikan+bakar+sambal+matah%0A•+Tumis+bayam+jagung%0A•+Tempe+orek+atau+telur+dadar%0A•+Buah+potong+dan+air+mineral%0A%0ABoleh+dibantu+infonya+untuk+ketersediaan+dan+pengiriman+ya+Kak+🙏%0ATerima+kasih!%0A%0A—+Dapur+OMA+HIONG+selalu+siap+menerima+pesanan+24+jam+💛"
+          target="_blank">
+          <button class="btn btn2">PESAN</button>
+        </a>
+      </div>
+
+      <!-- ===================== PAKET PROTEIN+ ===================== -->
+      <div class="card">
+        <div class="header paket3">PAKET PROTEIN+</div>
+        <div class="harga" style="color:#f9b24e;">/Pcs</div>
+        <ul>
+          <li>Nasi merah / nasi putih</li>
+          <li>Dada ayam panggang</li>
+          <li>Tumis brokoli wortel</li>
+          <li>Putih telur dadar / tahu kukus</li>
+          <li>Buah potong segar</li>
+          <li>Air mineral</li>
+        </ul>
+        <p class="deskripsi">
+          Semua menu disiapkan dengan bahan rumahan segar — praktis, higienis, dan tetap bergizi 🍃
+        </p>
+        <a href="https://wa.me/6289602738997?text=Halo+Dapur+OMA+HIONG+👋%0ASaya+mau+pesan+*Catering+Kantoran+-+Paket+Protein%2B*+💪%0A%0ADetail+paket:%0A•+Nasi+merah+atau+nasi+putih%0A•+Dada+ayam+panggang%0A•+Tumis+brokoli+wortel%0A•+Putih+telur+dadar+atau+tahu+kukus%0A•+Buah+potong+dan+air+mineral%0A%0ABoleh+dibantu+infonya+untuk+ketersediaan+dan+pengiriman+ya+Kak+🙏%0ATerima+kasih!%0A%0A—+Dapur+OMA+HIONG+selalu+siap+menerima+pesanan+24+jam+💛"
+          target="_blank">
+          <button class="btn btn3">PESAN</button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Dapur OMA HIONG</footer>
+</body>
+
+</html>
